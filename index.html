@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>FVTTS : Face-based Voice Synthesis for Text-To-Speech</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.io">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+  
+<body>
+<div class = "class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+	<div class = "text-center">
+		<h1> FVTTS :</h1>
+		<h2> Face-based Voice Synthesis for Text-To-Speech</h2>
+	
+	
+	<div class="is-size-5 publication-authors">
+		<span class="author-block">
+			<a href="https://sites.google.com/view/minyoung2" target="_blank">Minyoung Lee</a>,
+		</span>
+		<span class="author-block">
+			<a href="https://sites.google.com/view/eunil" target="_blank">Eunil Park</a><sup>*</sup>,
+		</span>
+		<span class="author-block">
+			<a href="https://www.csehong.com/" target="_blank">Sungeun Hong</a>
+		</span>
+	</div>
+	
+	<div class="is-size-5 publication-authors">
+		<span class="author-block">Sungkyunkwan University<br>Interspeech 2024</span>
+	    	<span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+	</div>
+
+	<div class="publication-links">
+		<!-- Arxiv PDF link -->
+	      	<span class="link-block">
+			<a href="https://www.isca-archive.org/interspeech_2024/lee24_interspeech.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+				<i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      	</a>
+	    	</span>
+
+	    	<!-- Github link -->
+	    	<span class="link-block">
+			<a href="https://github.com/myleeee/FVTTS_code" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      	<span class="icon">
+				<i class="fab fa-github"></i>
+                      	</span>
+                      	<span>Code</span>
+                    	</a>
+	  	</span>
+	</div>
+	</div>
+             
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">	
+	<!--  Abstract    -->
+	<p style="text-align: center;">
+	<img src="static/images/overview.jpg" width="800">
+	</p>
+	
+	<p> 
+	<b>Abstract.</b>
+	A face is expressive of individual identity and used in various studies such as identification, authentication, and personalization. Similarly, a voice is a means of expressing individuals, and personalized voice synthesis based on voice reference is active. However, the voice-based method confronts voice sample dependency limitations. We propose Face-based Voice synthesis for Text-To-Speech (FVTTS) to synthesize voice from face images that are more expressive of personal identity than voice samples. A major challenge in face-based TTS methods is extracting distinct voice features highly related to voice from the face image. Our face encoder is designed to tackle this by integrating global facial attributes with voice-related features to represent personalized characteristics. FVTTS has shown superiority in various metrics and adaptability across different data domains. We establish a new standard in face-based TTS, leading the way in personalized voice synthesis.
+	</p>
+	
+</div>
+
+
+<!-- LRS3 -->
+	
+<section class="hero is-small">
+	<div class="hero-body">
+		<div class="container">
+			<h2 class="title is-3">1. Results on LRS3 dataset</h2>
+			<p> FVTTS synthesizes diverse voices of multi-speaker Faces. With different face images of the same Speaker Face, FVTTS generate similar but not the same voices. The synthetic results are shown in following samples. </p>
+			<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+				<h2 id="sr-samples" style="text-align: center;">Synthetic voice is synthesized with unseen face images</h2>
+				<table class="table table-hover pt-2">
+				<thead>
+					<tr>
+					<th style="text-align: center">Face</th>
+					<th style="text-align: center">Text</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">yourTTS</th>
+					<th style="text-align: center">faceTTS</th>
+					<th style="text-align: center">FVTTS (ours) </th>
+					</tr>
+				</thead>
+			
+				<tbody>
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S0_I0_T7.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">So when I started my job at the Arnold Foundation I came back to looking at a lot of these questions and I came back.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S0_I0_T7.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S0_I0_T7.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S0_I0_T7.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S0_I0_T7.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+		
+		
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S1_I0_T8.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">So people hear about this study and they're like great if I want to get better at my job I just need to upgrade my browser.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S1_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S1_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S1_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S1_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+		
+		
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S2_I0_T4.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">There's going to be a new system based on donated package tracking rechnology from the logistics company  that I work for.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S2_I0_T4.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S2_I0_T4.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S2_I0_T4.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S2_I0_T4.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+		
+		
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S3_I0_T2.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">About a year after 911 researchers examined a group of women who were pregnant when they were exposed to the world.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S3_I0_T2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S3_I0_T2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S3_I0_T2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S3_I0_T2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+		
+		
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S5_I0_T8.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">So people hear about this study and they're like great if I want to get better at my job I just need to upgrade my browser.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S5_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S5_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S5_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S5_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+		
+		
+					<tr>
+						<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/unseen/S9_I0_T3.jpg"></td>
+						<td style="text-align: left;vertical-align:middle;width: 350px">And he said well I just care so deeply about my customers that I would never well them one of our crappy products.</td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/unseen/S9_I0_T3.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/unseen/S9_I0_T3.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/unseen/S9_I0_T3.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+						<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/unseen/S9_I0_T3.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					</tr>
+			
+				</tbody>
+			</table>
+			</div>
+
+			<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+				<h2 id="sr-samples" style="text-align: center;">Synthetic voice is synthesized with seen face images</h2>
+				<table class="table table-hover pt-2">
+				<thead>
+					<tr>
+					<th style="text-align: center">Face</th>
+					<th style="text-align: center">Text</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">yourTTS</th>
+					<th style="text-align: center">faceTTS</th>
+					<th style="text-align: center">FVTTS (ours) </th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/seen/S2_I0_T8.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">So people So people hear about this study and they're like great if I want to get better at my job I just need to upgrade my browser.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/seen/S2_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/seen/S2_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/seen/S2_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/seen/S2_I0_T8.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/seen/S7_I1_T9.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">And he was talking about the importance of coaching boys into men and changing the culture of the locker room and giving.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/seen/S7_I1_T9.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/seen/S7_I1_T9.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/seen/S7_I1_T9.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/seen/S7_I1_T9.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/seen/S8_I2_T0.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">We have ideas for how to make things better and I want to share three of them that we've picked up in our own work.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/seen/S8_I2_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/seen/S8_I2_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/seen/S8_I2_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/seen/S8_I2_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+			
+				</tbody>
+			</table>
+			</div>
+
+			
+		</div>
+	</div>
+</section>
+
+
+
+<!-- Cross -->
+	
+<section class="hero is-small">
+	<div class="hero-body">
+		<div class="container">
+			<h2 class="title is-3">2. Results on Cross dataset</h2>
+			<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+				<h2 id="sr-samples" style="text-align: center;">GRID dataset</h2>
+				<p>With GRID dataset, the out of distribution of seen dataset, we generate new voices.</p>
+				<table class="table table-hover pt-2">
+				<thead>
+					<tr>
+					<th style="text-align: center">Face</th>
+					<th style="text-align: center">Text</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">yourTTS</th>
+					<th style="text-align: center">faceTTS</th>
+					<th style="text-align: center">FVTTS (ours) </th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/grid/S0_I0_T0.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">We have ideas for how to make things better and I want to share three of them that we've picked up in our own work.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/grid/S0_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/grid/S0_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/grid/S0_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/grid/S0_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/grid/S1_I0_T0.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">We have ideas for how to make things better and I want to share three of them that we've picked up in our own work.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/grid/S1_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/grid/S1_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/grid/S1_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/grid/S1_I0_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/grid/S3_I1_T0.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">We have ideas for how to make things better and I want to share three of them that we've picked up in our own work.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/GT/grid/S3_I1_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/yourTTS/grid/S3_I1_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/grid/S3_I1_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/grid/S3_I1_T0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+			
+				</tbody>
+			</table>
+			</div>
+
+			
+			<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+				<h2 id="sr-samples" style="text-align: center;">Animation dataset</h2>
+				<p>To apply FVTTS to animation images, we synthesize voice of animation characters. We select the human-like character images from open access video sharing platform YouTube. Note that the model is trained for generate human voice, so that the characters' voices do not similar to their original voices.</p>
+				<table class="table table-hover pt-2">
+				<thead>
+					<tr>
+					<th style="text-align: center">Face</th>
+					<th style="text-align: center">Text</th>
+					<th style="text-align: center">faceTTS</th>
+					<th style="text-align: center">FVTTS (ours) </th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/al.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">You should see these places, I mean there are a whole world outside of books and maps.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/al.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/al.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/sul.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">You should see these places, I mean there are a whole world outside of books and maps.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/sul.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/sul.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/anna.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">You don't have to live in fear, cause for the first time in forever I will be right there.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/anna.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/anna.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/elsa2.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">Every day's a little harder as I feel my power grow. Don't you know there's part of me that longs to go into the unknown?</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/elsa2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/elsa2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/christ.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">But is this what it feels like to be growing apart. When did I become the one who’s always chasing your heart</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/christ.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/christ.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+	
+	
+				<tr>
+					<td style="text-align: left;vertical-align:middle;width: 150px"><img class = "cropped" src="static/images/ani/mo2.jpg"></td>
+					<td style="text-align: left;vertical-align:middle;width: 350px">There is nowhere you could go that I won't be with you and you will do wondrous thing.</td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/faceTTS/ani/mo2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+					<td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 180px;"><source src="static/wavs/FVTTS/ani/mo2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+				</tr>
+					
+			
+				</tbody>
+			</table>
+			</div>
+
+			
+		</div>
+	</div>
+</section>
+
+
+
+
+	
+	
+
+  
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
